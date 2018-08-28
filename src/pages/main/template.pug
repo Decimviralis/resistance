@@ -1,0 +1,19 @@
+.container
+  .upper-border
+    .value 700 Ом
+    .arrow
+  .block-row
+    .block.blue#blue Короткое замыкание
+    .block.green#green(v-bind:style="[{width: inputValue + 'px'}]") Замкнут
+    .block.orange#orange Разомкнут
+    .block.red Обрыв
+  .lower-border
+     .input-container(ref="testInput"
+                      v-bind:style="[{left: newX + 'px'}]"
+                      )
+       .arrow
+         img(src="../../assets/arrow.svg")
+       input.resistance(placeholder="200 Ом"
+                        v-on:keyup.enter="setCoord"
+                        id="first"
+                        v-model="inputValue")
